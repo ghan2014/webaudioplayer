@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" ng-app="webPlayerMiniAppApp"  ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <title>Live365 Web Player</title>
+    <base href="/">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/jplayer/dist/skin/pink.flag/jplayer.pink.flag.css" />
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container-fluid">
+        <div ng-controller="AppCtrl" class='row appCtrl mainCtrl'>
+
+            <div id="communicateDiv" ng-controller = 'CommunicateCtrl as commCtrl'></div>
+
+            <!--<wp-meta></wp-meta>-->
+            <div id="metadataDiv" ng-controller = 'MetadataCtrl as metadataCtrl' class='col-xs-3'>
+
+                <div class='row'>
+                    <div class="coverArt col-xs-12 col-md-4">
+                        <img class='coverArt' ng-show="metadataCtrl.metadata.trackId" ng-src="{{metadataCtrl.metadata.imageURL}}">{{metadataCtrl.broadcastData.sInfoPanel}}
+                    </div>
+                    <div class='metadatas col-md-8 hidden-xs hidden-sm'>
+                        <p ng-controller="StationCtrl as stationCtrl" class='stationName ellipsis'>
+                            {{stationCtrl.station.stationName}}</p>
+                        <p id="title" ng-show="metadataCtrl.metadata.trackId" class="metadataText ellipsis">{{metadataCtrl.metadata.title}}</p>
+                        <p id="artist" ng-show= "metadataCtrl.metadata.trackId" class="metadataText ellipsis">{{metadataCtrl.metadata.artist}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="share" ng-controller = 'ShareCtrl as shareCtrl' class='more col-md-1 hidden-xs hidden-sm'>
+<!--<div id='more' ng-show='shareCtrl.show'><ul><li>Share</li><li>Flag</li></ul></div>-->
+  
+
+    <button type="button" class="btn btn-info btn-lg transparent" ng-click="shareCtrl.toggleShare();"><img ng-src="/assets/more.png"></button>
+  control: {{shareCtrl.show}}  
+  <modal title="share options" visible="shareCtrl.show">
+    <ul>
+    <li>Share</li>
+    <li>Flag</li>
+    </ul>
+  </modal>
+
+<!--<button type="button" class="btn btn-info btn-lg transparent" ng-click="shareCtrl.toggleShare();"><img ng-src="/assets/more.png"></button>-->
+            </div>
+                
+
+            <!--<wp-control></wp-control>-->
+            <div ng-controller="PlayerCtrl as playerCtrl" class="playerCtrl col-xs-8">
+
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+                <div class='row'>
+                    <div id='playControl' class='col-xs-6'>
+                        <button class="transparent" ng-click="playerCtrl.seeking('backward')"><img src="/assets/backward.png" class='img-responsive'></button>
+
+                        <button class="transparent" ng-click="playerCtrl.play()" ng-show="playerCtrl.button == 'Play'"><img src="/assets/play.png" class='img-responsive'></button>
+                        <button class="transparent" ng-click="playerCtrl.play()" ng-show="playerCtrl.button == 'Stop'"><img src="/assets/pause.png" class='img-responsive'></button>
+
+                        <button class="transparent" ng-click="playerCtrl.seeking('forward')"><img src="/assets/forward.png" class='img-responsive'></button>
+
+                        <button class="transparent" ng-click="playerCtrl.playAfterTrack()"><img src="/assets/skip.png" class='img-responsive'></button>
+                    </div>
+
+                    <div class='playerControls col-md-3 hidden-sm hidden-xs'>
+                        <div class='row'>
+                            <div class="glyphicon glyphicon-volume-up col-xs-4" aria-hidden="true"></div>
+                            <span id="sliderVolume" class='hidden-lg hidden-md hidden-xs hidden-sm'></span> 
+                            <div class='col-xs-8' ui-slider='playerCtrl.slider.options' min="0.00" max="1.00" step="0.01" use-decimals ng-model="playerCtrl.volume"></div>
+                        </div>
+                    </div>
+
+                    <div ng-controller="PlaylistMetadataCtrl as playlistMetadataCtrl" class='playlistName ellipsis col-md-2 hidden-xs hidden-sm'>
+                            {{playlistMetadataCtrl.playlistMetadata.playlistName}}
+                    </div>
+
+                    <div ng-if="playerCtrl.trackList_bool">
+                        <ul>
+                            <li ng-repeat='item in playerCtrl.broadcastData.trackList.trackArray'>
+                               <a ng-click="selected.item.artist = item.artist">{{ item.artist }}</a>
+                           </li>
+                        </ul>
+                    </div> 
+
+<!-- Modal 
+<div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">It is a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <a ng-click="selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+    <button class="btn btn-default" ng-click="open('sm')">Small modal</button>
+    
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>-->
+
+                    <div class='playlistName ellipsis col-md-1 hidden-xs hidden-sm'>
+                        <button class="transparent" ng-click="playerCtrl.showTrackList()"><img src="/assets/list.png" class='img-responsive'></button>
+                    </div>
+
+                </div> 
+            </div>
+
+            <div class='row'>
+                <div ng-controller = 'MetadataCtrl as metadataCtrl1' class='progressTimer col-xs-12'>
+                    {{(metadataCtrl1.metadata.currentTime)/60 | number:2}} / {{(metadataCtrl1.metadata.duration)/60 | number:2}}
+                </div>
+            </div>
+
+            <div ng-controller="PlayerCtrl as playerCtrl1" class="row progress progress-striped active"> 
+                <div class="progress-bar col-xs-12" style="width: {{playerCtrl1.metadata.percentage}}%;"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/jplayer/dist/jplayer/jquery.jplayer.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-slider/src/slider.js"></script>
+    <script src="bower_components/momentjs/moment.js"></script>
+    <script src="bower_components/humanize-duration/humanize-duration.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/GlobalSettings.js"></script>
+    <script src="scripts/PgMediatorClass.js"></script>
+    <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/appCtrl.js"></script>
+        <script src="scripts/controllers/metadata.js"></script>
+        <script src="scripts/controllers/station.js"></script>
+        <script src="scripts/controllers/communicate.js"></script>
+        <script src="scripts/controllers/player.js"></script>
+        <script src="scripts/controllers/playlistMetadata.js"></script>
+        <script src="scripts/controllers/share.js"></script>
+        <script src="scripts/services/themer.js"></script>
+        <script src="scripts/services/player.js"></script>
+        <script src="scripts/services/metadata.js"></script>
+        <script src="scripts/services/station.js"></script>
+        <script src="scripts/services/playlistMetadata.js"></script>
+        <script src="scripts/services/share.js"></script>
+        <script src="scripts/services/broadcastData.js"></script>
+        <script src="scripts/services/jQueryJplayer.js"></script>
+    <script src="scripts/directives/shareOptions.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

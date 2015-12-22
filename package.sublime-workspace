@@ -1,0 +1,230 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"reset",
+				"resetTimer"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<div ng-show=\"show\">\n    <div ng-show=\"loading\">We are loading</div>\n    <div ng-show=\"error\">Some sort of error</div>\n</div>",
+			"file": "app/views/info.html",
+			"file_size": 125,
+			"file_write_time": 1421710138000000,
+			"settings":
+			{
+				"buffer_size": 125,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 264.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/webdev/Development/webplayerminiapp/app/scripts/services/metadata.js",
+		"/Users/webdev/Development/webplayerminiapp/app/scripts/services/player.js",
+		"/Users/webdev/Development/angular/views/basic2.html",
+		"/Users/webdev/Development/angular/javascripts/basic2.js",
+		"/Users/webdev/Development/webplayerminiapp/app/scripts/controllers/player.js",
+		"/Users/webdev/Development/webplayerminiapp/app/scripts/controllers/metadata.js",
+		"/Users/webdev/Development/angular/javascripts/todo.js",
+		"/Users/webdev/Development/angular/views/basic1.html",
+		"/Users/webdev/Development/angular/views/service.html",
+		"/Users/webdev/Development/webplayerminiapp/app/index.html",
+		"/Users/webdev/Development/webplayerminiapp/app/scripts/services/metadatactrl.js",
+		"/Users/webdev/Development/yo-project/app/index.html",
+		"/Users/webdev/Development/yo-project/app/scripts/controllers/appcontroller.js",
+		"/Users/webdev/Development/angular/javascripts/ServiceController.js",
+		"/Users/webdev/Development/webplayerminiapp/Gruntfile.js",
+		"/Users/webdev/Development/webplayerminiapp/app/views/themes/brand/theme_1.html",
+		"/Users/webdev/Development/webplayerminiapp/test/spec/controllers/main.js",
+		"/Users/webdev/Development/angular/tests/jasmineBootstrap.js",
+		"/Users/webdev/Development/angular/tests/app.js",
+		"/Users/webdev/Development/angular/tests/appSpecTest.js",
+		"/Users/webdev/Development/angular/tests/index.html",
+		"/Users/webdev/Development/angular/tests/style.css",
+		"/Users/webdev/Development/angular/javascripts/MyController.js",
+		"/Users/webdev/Development/angular/views/spicyController.html",
+		"/Users/webdev/Development/angular/javascripts/SpicyController.js",
+		"/Users/webdev/Development/angular/javascripts/finance2.js",
+		"/Users/webdev/Development/angular/javascripts/finance3.js",
+		"/Users/webdev/Development/angular/javascripts/invoice3.js",
+		"/Users/webdev/Development/angular/views/invoice3.html",
+		"/Users/webdev/Development/angular/javascripts/Invoice2.js",
+		"/Users/webdev/Development/angular/views/invoice2.html",
+		"/Users/webdev/Development/angular/javascripts/invoice1.js",
+		"/Users/webdev/Development/angular/views/e2.html",
+		"/Users/webdev/Development/angular/views/e1.html",
+		"/Users/webdev/Development/angular/app.js",
+		"/Users/webdev/Development/notes/webplayerminiapp.html",
+		"/Users/webdev/Development/webplayerminiapp/app/views/main.html",
+		"/Users/webdev/Development/sourcewebplayerminiappfrompublishersite/README.md",
+		"/Users/webdev/ghantest/promise.js",
+		"/Users/webdev/Pictures/wired.jpg",
+		"/Users/webdev/nodebootcamp/koa/helloworld.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"$scope",
+			"this",
+			"$scope",
+			"ThemeFileManager",
+			"main"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"this",
+			"$scope",
+			"this"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/info.html",
+					"settings":
+					{
+						"buffer_size": 125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/webdev/Development/notes/webplayerminiapp.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 190.0,
+	"status_bar_visible": true
+}

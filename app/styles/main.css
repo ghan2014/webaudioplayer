@@ -1,0 +1,182 @@
+/* Space out content a bit */
+body {
+  padding-top: 16px;
+  padding-bottom: 10px;
+  background-color: #383838;
+  color: #000000;
+  background-image: url('../assets/playerbg_default.png');
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+/*@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 768px) { 
+  div.playerControls{display: none;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+
+}
+
+.ui-slider-horizontal{
+  top: 30px;
+  height: 0.1em;
+  border: 1px solid #000000;
+}
+.ui-slider .ui-slider-handle{
+  width: 0.6em;
+  height: 0.6em;
+  border: 1px solid #000000;
+}
+
+.progressTimer{
+  text-align: right;
+  font-size: 10px;
+  z-index: 10;
+  position: fixed;
+  top: 1px;
+  right: 0;
+}
+
+.transparent{
+  background-color: transparent;
+  border: none;
+  outline: 0;
+}
+
+.coverArt{
+  text-align: center;
+  height: 60px;
+}
+
+.ellipsis{
+  padding: 0 0;
+  margin: 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+div.stationName{text-align: center;}
+
+#playControl{
+  height: 100%;
+}
+
+.center{
+  /*
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metadatas{
+  padding: 0px;
+}
+
+.progress{
+  height: 10px;
+  margin-bottom: 5px;
+  z-index: 1;
+  position: fixed;
+  top: 1px; 
+  background-color: #f5841f;
+  padding: 0px;
+}
+
+.modal-content{
+  color: black;
+}
+.glyphicon, .playlistName{
+  line-height: 60px;
+}
+
+.more{
+  line-height: 55px;
+}
+
+.volume{
+  line-height: 57px;
+}
+
+.lh60{
+  line-height: 52px;
+  text-align: center;
+}
+
+#sliderVolume{
+  line-height: 60px;
+  margin-left: 5px;
+}
+
+.playlistName{text-align: right;}
+.trackList{text-align: left;line-height: normal;}
+
+#artist, .stationName, .playlistName{
+  font-size: 12px
+}
+
+.clearSpace{margin:0;padding:0;}

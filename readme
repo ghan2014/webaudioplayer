@@ -1,0 +1,7 @@
+test in console
+
+angular.element( document.querySelector( '#communicateDiv') ).scope().commCtrl.execute_xtnl_command('#communicateDiv', 'commCtrl', {notice:{stationId:1154,sessionId:'ADDC70F38CB64C74AD25743462083AE5',playlistId: 1561, trackUid:'dba7ab67-a844-42d5-855b-2d5115f2046e', autoplay:1}})
+
+login to tau and get sessionid
+
+account on tau: guohonghanusa@gmail.com/Test_123
